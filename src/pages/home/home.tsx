@@ -1,14 +1,12 @@
 import { useQuery } from "@tanstack/react-query";
-import PlanetCard from "../../components/planetCard";
 import { getPlanets } from "../../api/get-planets";
+import PlanetCard from "../../components/planetCard";
 
 export default function Home() {
   const { data: planets } = useQuery({
     queryFn: getPlanets,
     queryKey: ["planets"],
   });
-
-  console.log(planets);
 
   return (
     <div>
@@ -23,6 +21,7 @@ export default function Home() {
                 climate={planet.climate}
                 films={planet.films}
                 diameter={planet.diameter}
+                url={planet.url}
               />
             );
           })}

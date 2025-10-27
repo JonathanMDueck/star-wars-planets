@@ -9,6 +9,7 @@ export interface PlanetInterface {
   terrain: string;
   diameter: string;
   climate: string;
+  url: string;
   films: string[];
 }
 
